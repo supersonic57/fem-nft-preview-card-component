@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  background-color: hsl(217, 54%, 11%);
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.component {
+  background-color: hsl(216, 50%, 16%);
+  width: 360px;
+  padding: 25px;
+  border-radius: 20px;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  color: hsl(215, 51%, 70%);
+  font-weight: 300;
+  box-shadow: 0 30px 50px #010204;
+  display: grid;
+  gap: 20px;
+}
+@media screen and (max-width: 400px) {
+  .component {
+    width: 85%;
+  }
+}
+.component .image {
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+}
+.component .image img.equilibrium {
+  grid-row: 1;
+  grid-column: 1;
+}
+.component .image .eye {
+  grid-row: 1;
+  grid-column: 1;
+  width: 100%;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  background-color: hsla(178, 100%, 50%, 0.5);
+  visibility: hidden;
+}
+.component .image:hover {
+  cursor: pointer;
+}
+.component .image:hover .eye {
+  visibility: visible;
+}
+.component h1 a {
+  font-size: 1.2em;
+  color: hsl(0, 0%, 100%);
+  font-weight: 600;
+  text-decoration: none;
+}
+.component h1 a:hover {
+  color: hsl(178, 100%, 50%);
+}
+.component p.description {
+  line-height: 1.5;
+}
+@media screen and (max-width: 400px) {
+  .component p.description {
+    font-size: 0.85em;
+  }
+}
+.component .price-and-time {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9em;
+}
+.component .price-and-time .price {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 100px;
+  gap: 8px;
+  font-weight: 600;
+  color: hsl(178, 100%, 50%);
+}
+.component .price-and-time .time {
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  width: 100px;
+  gap: 8px;
+  font-weight: 400;
+}
+.component .horizontal-line {
+  border-bottom: 1px solid hsl(215, 51%, 70%);
+}
+.component .attribution {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  gap: 15px;
+}
+.component .attribution img.avatar {
+  width: 35px;
+  border: 1px solid hsl(0, 0%, 100%);
+  border-radius: 50%;
+}
+@media screen and (max-width: 400px) {
+  .component .attribution p {
+    font-size: 0.9em;
+  }
+}
+.component .attribution p a {
+  color: hsl(0, 0%, 100%);
+  font-weight: 400;
+  text-decoration: none;
+}
+.component .attribution p a:hover {
+  color: hsl(178, 100%, 50%);
+}
+
+/*# sourceMappingURL=style.css.map */

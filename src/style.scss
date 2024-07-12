@@ -1,0 +1,157 @@
+@import "reset";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+// Mixins
+
+@mixin price-and-time-item ($direction, $fw) {
+  display: flex;
+  align-items: center;
+  justify-content: $direction;
+  width: 100px;
+  gap: 8px;
+  font-weight: $fw;
+}
+
+// Colors
+
+$clr-soft-blue: hsl(215, 51%, 70%);
+$clr-cyan: hsl(178, 100%, 50%);
+$clr-cyan-transparent: hsla(178, 100%, 50%, 0.5);
+
+$clr-very-dark-blue-main-bg: hsl(217, 54%, 11%);
+$clr-very-dark-blue-card-bg: hsl(216, 50%, 16%);
+$clr-very-dark-blue-line: hsl(215, 32%, 27%);
+$clr-white: hsl(0, 0%, 100%);
+
+// Other Variables
+
+$breakpoint: 400px;
+
+// Styling
+
+body {
+  background-color: $clr-very-dark-blue-main-bg;
+}
+
+.container {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.component {
+  background-color: $clr-very-dark-blue-card-bg;
+  width: 360px;
+  padding: 25px;
+  border-radius: 20px;
+  font-family: "Outfit", sans-serif;
+  font-size: 18px;
+  color: $clr-soft-blue;
+  font-weight: 300;
+  box-shadow: 0 30px 50px
+    darken($clr-very-dark-blue-main-bg, 10%);
+  display: grid;
+  gap: 20px;
+
+  @media screen and (max-width: $breakpoint) {
+    width: 85%;
+  }
+  
+  .image {
+    border-radius: 10px;
+    overflow: hidden;
+    display: grid;
+
+    img.equilibrium {
+      grid-row: 1;
+      grid-column: 1;
+    }
+
+    .eye {
+      grid-row: 1;
+      grid-column: 1;
+      width: 100%;
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      background-color: $clr-cyan-transparent;
+      visibility: hidden;
+    }
+
+    &:hover {
+      cursor: pointer;
+
+      .eye {
+        visibility: visible;
+      }
+    }
+  }
+
+  h1 a {
+    font-size: 1.2em;
+    color: $clr-white;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: $clr-cyan;
+    }
+  }
+
+  p.description {
+    line-height: 1.5;
+
+    @media screen and (max-width: $breakpoint) {
+      font-size: 0.85em;
+    }
+  }
+
+  .price-and-time {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9em;
+    // border-bottom: 1px solid $clr-soft-blue;
+
+    .price {
+      @include price-and-time-item(left, 600);
+      color: $clr-cyan;
+    }
+
+    .time {
+      @include price-and-time-item(right, 400);
+    }
+  }
+
+  .horizontal-line {
+    border-bottom: 1px solid $clr-soft-blue;
+  }
+
+  .attribution {
+    display: flex;
+    align-items: center;
+    font-size: 0.9em;
+    gap: 15px;
+
+    img.avatar {
+      width: 35px;
+      border: 1px solid $clr-white;
+      border-radius: 50%;
+    }
+
+    p {
+      @media screen and (max-width: $breakpoint) {
+        font-size: 0.9em;
+      }
+      
+      a {
+        color: $clr-white;
+        font-weight: 400;
+        text-decoration: none;
+
+        &:hover {
+          color: $clr-cyan;
+        }
+      }
+    }
+  }
+}
